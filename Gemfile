@@ -39,6 +39,7 @@ end
 # gem 'unicorn'
 
 gem 'paperclip'
+gem 'sorcery'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

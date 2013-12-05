@@ -5,4 +5,5 @@ Blogger::Application.routes.draw do
     resources :attachments
   end
   resources :tags
+  resources :authors
 end
