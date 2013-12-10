@@ -8,7 +8,6 @@
 
 <h3>Attachments (<%= @article.attachments.size %>)</h3>
 <%= render partial: 'articles/attachment', collection: @article.attachments %>
-<%= render partial: 'attachments/form' %>
 
 <p><%= @article.body %></p>
 
@@ -16,6 +15,9 @@
 <%= render partial: 'articles/comment', collection: @article.comments %>
 <%= render partial: 'comments/form' %>
 
-<%= link_to 'edit', edit_article_path(@article) %>
-<%= link_to 'delete', article_path(@article), method: :delete, data: {confirm: 'Really delete the article?'} %>
+<% if logged_in? %>
+  <%= link_to 'edit', edit_article_path(@article) %>
+  <%= link_to 'delete', article_path(@article), method: :delete, data: {confirm: 'Really delete the article?'} %>
+  <%= render partial: 'attachments/form' %>
+<% end %>
 <%= link_to '<< Back to articles list', articles_path %>
